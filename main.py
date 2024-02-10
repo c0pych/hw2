@@ -2,7 +2,8 @@ def find(data, index, arr, sm):
     if index < len(data):
         if data[index] is not None:
             arr.append(data[index])
-            if sum(arr) == sm and find(data, index * 2 + 1, arr.copy(), sm) and find(data, index * 2 + 2, arr.copy(), sm):
+            if sum(arr) == sm and find(data, index * 2 + 1, arr.copy(), sm) and find(data, index * 2 + 2, arr.copy(),
+                                                                                     sm):
                 print('->'.join([str(elem) for elem in arr]))
                 return False
             else:
@@ -34,5 +35,4 @@ for i in range(len(nodes)):
     if nodes[i] is None and i * 2 + 1 >= ln and len(nodes) > ln:
         nodes.insert(i * 2 + 1, None)
         nodes.insert(i * 2 + 2, None)
-print(nodes)
 find(nodes, 0, [], n)
